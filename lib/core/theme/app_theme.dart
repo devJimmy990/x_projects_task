@@ -18,12 +18,12 @@ class AppThemeData {
       // error: ColorManager.error,
       // onError: ColorManager.white,
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       elevation: 0,
       surfaceTintColor: ColorsManager.white,
       backgroundColor: ColorsManager.white,
       foregroundColor: ColorsManager.white,
-      systemOverlayStyle: const SystemUiOverlayStyle(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: ColorsManager.blackPrimary,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.dark,
