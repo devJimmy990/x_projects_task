@@ -67,6 +67,16 @@ flutter:
     - .env
     - assets/icons/
     - assets/images/
+ 
+  fonts:
+    - family: telegraf
+      fonts:
+        - asset: assets/fonts/telegraf-extra-Light.otf
+          weight: 200
+        - asset: assets/fonts/telegraf-extra-bold.otf
+          weight: 800
+        - asset: assets/fonts/telegraf-Regular.otf
+          weight: 400
 
 flutter_assets:
   assets_path:

@@ -10,6 +10,10 @@ class AssetsManager {
   /// assets/icons/bookmark.svg
   static const String assetsIconsBookmark = "assets/icons/bookmark.svg";
 
+  /// Assets for assetsIconsBookmarkOutline
+  /// assets/icons/bookmark-outline.svg
+  static const String assetsIconsBookmarkOutline = "assets/icons/bookmark-outline.svg";
+
   /// Assets for assetsIconsChat
   /// assets/icons/chat.svg
   static const String assetsIconsChat = "assets/icons/chat.svg";
@@ -22,6 +26,10 @@ class AssetsManager {
   /// assets/icons/home.svg
   static const String assetsIconsHome = "assets/icons/home.svg";
 
+  /// Assets for assetsIconsMenu
+  /// assets/icons/menu.svg
+  static const String assetsIconsMenu = "assets/icons/menu.svg";
+
   /// Assets for assetsIconsMic
   /// assets/icons/mic.svg
   static const String assetsIconsMic = "assets/icons/mic.svg";
@@ -30,9 +38,9 @@ class AssetsManager {
   /// assets/icons/notification.svg
   static const String assetsIconsNotification = "assets/icons/notification.svg";
 
-  /// Assets for assetsIconsPath
-  /// assets/icons/Path.svg
-  static const String assetsIconsPath = "assets/icons/Path.svg";
+  /// Assets for assetsIconsPlay
+  /// assets/icons/play.svg
+  static const String assetsIconsPlay = "assets/icons/play.svg";
 
   /// Assets for assetsIconsSearch
   /// assets/icons/search.svg
