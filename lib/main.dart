@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:x_projects_task/core/theme/app_theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_projects_task/features/main/main_screen.dart';
+import 'package:x_projects_task/features/home/cubit/news_cubit.dart';
+import 'package:x_projects_task/features/home/data/repositories/news_repository.dart';
+import 'package:x_projects_task/features/home/data/data_source/remote_news_data_source.dart';
 
 void main() async {
   await dotenv.load(fileName: ".env");
@@ -15,17 +19,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      designSize: const Size(375, 812),
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppThemeData.light,
-          home: const MainScreen(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create:
+              (context) => NewsCubit(NewsRepository(RemoteNewsDataSource())),
+        ),
+      ],
+      child: ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
+        designSize: const Size(375, 812),
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: AppThemeData.light,
+            home: const MainScreen(),
+          );
+        },
+      ),
     );
   }
 }
