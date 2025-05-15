@@ -4,13 +4,14 @@ import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/core/cubit/generic_cubit.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
 import 'package:x_projects_task/core/ui/floating_bottom_container.dart';
+import 'package:x_projects_task/features/home/presentation/screens/home_screen.dart';
 
 final List<Widget> _screens = [
-  Center(child: Text('Home Screen')),
-  Center(child: Text('Bookmark Screen')),
-  Center(child: Text('Search Screen')),
-  Center(child: Text('Notification Screen')),
-  Center(child: Text('Settings Screen')),
+  const HomeScreen(),
+  const Center(child: Text('Bookmark Screen')),
+  const Center(child: Text('Search Screen')),
+  const Center(child: Text('Notification Screen')),
+  const Center(child: Text('Settings Screen')),
 ];
 
 final List<String> _icons = [

@@ -58,16 +58,12 @@ class DioConnection {
 
   String _handleError(dynamic error) {
     if (error is DioException && error.response != null) {
-      print("debug-connection: dio - error: $error");
-      print("debug-connection: dio - error: ${error.response}");
-      print("debug-connection: dio - error: ${error.response!.data}");
       final responseData = error.response!.data;
       if (responseData is Map && responseData.containsKey("message")) {
         return responseData["message"];
       }
       return 'Unexpected server error';
     } else {
-      print("debug-connection: error: $error");
       return 'Unknown error occurred';
     }
   }
