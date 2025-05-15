@@ -57,5 +57,13 @@ class AssetsManager {
   /// Assets for assetsImagesLogo
   /// assets/images/logo.png
   static const String assetsImagesLogo = "assets/images/logo.png";
+
+  /// Assets for assetsImagesNewsDummy
+  /// assets/images/news-dummy.jpg
+  static const String assetsImagesNewsDummy = "assets/images/news-dummy.jpg";
+
+  /// Assets for assetsImagesUser
+  /// assets/images/user.jpg
+  static const String assetsImagesUser = "assets/images/user.jpg";
 }
 
