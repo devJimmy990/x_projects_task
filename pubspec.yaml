@@ -37,8 +37,10 @@ dependencies:
   device_preview: ^1.2.0
  
   # Helper
+  uuid: ^4.5.1
   intl: ^0.19.0
   dio: ^5.8.0+1
+  fluttertoast: ^8.2.12
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
 
@@ -48,6 +50,7 @@ dependencies:
   hydrated_bloc: ^10.0.0
 
   # UI
+  shimmer: ^3.0.0
   flutter_svg: ^2.1.0
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.6
