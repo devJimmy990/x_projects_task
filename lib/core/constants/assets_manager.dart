@@ -10,6 +10,10 @@ class AssetsManager {
   /// assets/icons/bookmark.svg
   static const String assetsIconsBookmark = "assets/icons/bookmark.svg";
 
+  /// Assets for assetsIconsBookmarkFill
+  /// assets/icons/bookmark-fill.svg
+  static const String assetsIconsBookmarkFill = "assets/icons/bookmark-fill.svg";
+
   /// Assets for assetsIconsBookmarkOutline
   /// assets/icons/bookmark-outline.svg
   static const String assetsIconsBookmarkOutline = "assets/icons/bookmark-outline.svg";
