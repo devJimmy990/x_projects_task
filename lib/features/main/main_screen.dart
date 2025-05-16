@@ -7,13 +7,14 @@ import 'package:x_projects_task/core/ui/floating_bottom_container.dart';
 import 'package:x_projects_task/features/bookmark/presentation/screen/bookmark_screen.dart';
 import 'package:x_projects_task/features/home/presentation/screens/home_screen.dart';
 import 'package:x_projects_task/features/notification/notification_screen.dart';
+import 'package:x_projects_task/features/settings/settings_screen.dart';
 
 final List<Widget> _screens = [
   const HomeScreen(),
   const BookmarkScreen(),
   const Center(child: Text('Search Screen')),
   const NotificationScreen(),
-  const Center(child: Text('Settings Screen')),
+  const SettingsScreen(),
 ];
 
 final List<String> _icons = [
