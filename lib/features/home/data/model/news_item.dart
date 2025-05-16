@@ -1,4 +1,3 @@
-import 'package:uuid/uuid.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
 
 class NewsItem {
@@ -17,11 +16,12 @@ class NewsItem {
   });
 
   factory NewsItem.fromJson(Map<String, dynamic> json) {
+    final id = json['title'].toString().replaceAll(" ", "-");
     return NewsItem(
-      id: const Uuid().v4(),
       url: json['url'] ?? "https://flutter.dev",
       author: json['author'] ?? "unknown author",
       title: json['title'] ?? "no title available",
+      id: id.length > 40 ? id.substring(0, 40) : id,
       content: json['content'] ?? "no content available",
       description: json['description'] ?? "no description available",
       publishedAt: DateTime.tryParse(json['publishedAt']) ?? DateTime.now(),
@@ -38,7 +38,7 @@ class NewsItem {
       'content': content,
       'urlToImage': urlToImage,
       'description': description,
-      'publishedAt': publishedAt,
+      'publishedAt': publishedAt.toIso8601String(),
     };
   }
 
