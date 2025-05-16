@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
-        sdk: flutter
+    sdk: flutter
 
   # Debug
   device_preview: ^1.2.0
