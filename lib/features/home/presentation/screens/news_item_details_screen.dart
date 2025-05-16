@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/ui/bookmark_button.dart';
+import 'package:x_projects_task/core/ui/svg_icon_button.dart';
+import 'package:x_projects_task/core/constants/extensions.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
 import 'package:x_projects_task/core/constants/colors_manager.dart';
-import 'package:x_projects_task/core/constants/extensions.dart';
 import 'package:x_projects_task/core/ui/floating_bottom_container.dart';
-import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/features/home/data/model/news_item.dart';
 
 class NewsItemDetailsScreen extends StatelessWidget {
@@ -33,11 +34,8 @@ class NewsItemDetailsScreen extends StatelessWidget {
             onTap: () {},
             icon: AssetsManager.assetsIconsChat,
           ),
-          SvgIconButton(
-            size: 24,
-            onTap: () {},
-            icon: AssetsManager.assetsIconsBookmarkOutline,
-          ),
+
+          BookmarkButton(item, fill: Colors.grey),
           SvgIconButton(
             size: 24,
             onTap: () {},

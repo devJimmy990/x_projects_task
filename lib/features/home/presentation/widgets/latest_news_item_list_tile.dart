@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_projects_task/core/constants/assets_manager.dart';
+import 'package:x_projects_task/core/ui/image_handler.dart';
 import 'package:x_projects_task/core/constants/colors_manager.dart';
 import 'package:x_projects_task/features/home/data/model/news_item.dart';
 import 'package:x_projects_task/features/home/presentation/screens/news_item_details_screen.dart';
@@ -24,27 +24,7 @@ class LatestNewsItemListTile extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10.r),
-            child:
-                item.urlToImage.contains("http")
-                    ? Image.network(
-                      item.urlToImage,
-                      width: 100.w,
-                      height: 100.h,
-                      fit: BoxFit.fill,
-                      errorBuilder:
-                          (context, error, stackTrace) => Image.asset(
-                            AssetsManager.assetsImagesNewsDummy,
-                            width: 100.w,
-                            height: 100.h,
-                            fit: BoxFit.fill,
-                          ),
-                    )
-                    : Image.asset(
-                      item.urlToImage,
-                      width: 100.w,
-                      height: 100.h,
-                      fit: BoxFit.fill,
-                    ),
+            child: ImageHandler(item.urlToImage),
           ),
           Expanded(
             child: Column(
