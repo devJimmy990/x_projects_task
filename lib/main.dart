@@ -1,14 +1,15 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_projects_task/features/main/main_screen.dart';
+import 'package:x_projects_task/features/connection/no_internet_connection_screen.dart';
 import 'package:x_projects_task/features/home/cubit/news_cubit.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_cubit.dart';
+import 'package:x_projects_task/features/main/main_screen.dart';
 import 'package:x_projects_task/features/settings/cubit/settings_cubit.dart';
 import 'package:x_projects_task/features/settings/cubit/settings_state.dart';
 import 'package:x_projects_task/features/home/data/repositories/news_repository.dart';
@@ -22,11 +23,23 @@ void main() async {
       (await getTemporaryDirectory()).path,
     ),
   );
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  Stream<bool> get connectionStream async* {
+    final connectivity = Connectivity();
+
+    final initial = await connectivity.checkConnectivity();
+    yield initial.contains(ConnectivityResult.wifi) ||
+        initial.contains(ConnectivityResult.mobile);
+
+    await for (final result in connectivity.onConnectivityChanged) {
+      yield result.contains(ConnectivityResult.wifi) ||
+          result.contains(ConnectivityResult.mobile);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +61,6 @@ class MyApp extends StatelessWidget {
             builder: (context, state) {
               return MaterialApp(
                 theme: state.theme,
-                home: const MainScreen(),
                 locale: Locale(state.locale),
                 debugShowCheckedModeBanner: false,
                 supportedLocales: S.delegate.supportedLocales,
@@ -58,6 +70,18 @@ class MyApp extends StatelessWidget {
                   GlobalMaterialLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
+                home: StreamBuilder<bool>(
+                  stream: connectionStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Scaffold();
+                    } else if (snapshot.data ?? false) {
+                      return const MainScreen();
+                    } else {
+                      return const NoInternetConnectionScreen();
+                    }
+                  },
+                ),
               );
             },
           );
