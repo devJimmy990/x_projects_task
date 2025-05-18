@@ -5,7 +5,8 @@ class Localization {
   static get appNameNews => S.current.app_name_news;
   static get appNameApp => S.current.app_name_app;
   static get error => S.current.error;
-  static get ago => S.current.ago;
+  static get today => S.current.today;
+  static get dayAgo => S.current.day_ago;
 
   static get selectTheme => S.current.select_theme;
   static get themeDark => S.current.theme_dark;

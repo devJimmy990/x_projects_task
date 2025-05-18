@@ -18,6 +18,11 @@ class NewsCubit extends Cubit<NewsState> {
     try {
       _news = await _repository.getNews(page: _page);
       emit(NewsLoaded(news: _news, isLoadingMore: false));
+      final currentState = state as NewsLoaded;
+      if (currentState.newest.length == currentState.news.length ||
+          currentState.latest.length == currentState.news.length) {
+        loadMoreNews();
+      }
     } catch (e) {
       emit(NewsError(e.toString()));
     }

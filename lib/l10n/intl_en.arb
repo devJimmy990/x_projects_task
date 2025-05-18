@@ -1,7 +1,9 @@
 {
+    "@@locale": "en",
     "app_name_news": "News",
     "app_name_app": "App",
-    "ago": "ago",
+    "today": "Today",
+    "day_ago": "day ago",
     "error": "Error",
     "theme_dark": "Dark Mode",
     "theme_light": "Light Mode",
@@ -15,6 +17,5 @@
     "latest_news": "Latest News",
     "latest_bookmark": "Latest Bookmark",
     "bookmark_added": "Added to bookmark",
-    "bookmark_removed": "Removed from bookmark",
-    "sa": ""
+    "bookmark_removed": "Removed from bookmark"
 }

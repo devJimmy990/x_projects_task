@@ -48,22 +48,20 @@ class BookmarkListTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(item.id.length.toString()),
-                    Text(item.id),
-                    //     Text(
-                    //       'Technology'.toUpperCase(),
-                    //       style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    //         color: ColorsManager.blackSecondary,
-                    //       ),
-                    //     ),
-                    //     SizedBox(height: 7.h),
-                    //     Text(
-                    //       item.title,
-                    //       maxLines: 3,
-                    //       overflow: TextOverflow.ellipsis,
-                    //       style: Theme.of(context).textTheme.headlineMedium,
-                    //       semanticsLabel: item.title,
-                    //     ),
+                    Text(
+                      'Technology'.toUpperCase(),
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: ColorsManager.blackSecondary,
+                      ),
+                    ),
+                    SizedBox(height: 7.h),
+                    Text(
+                      item.title,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                      semanticsLabel: item.title,
+                    ),
                   ],
                 ),
               ),

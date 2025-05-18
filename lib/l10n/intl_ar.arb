@@ -1,7 +1,9 @@
 {
+    "@@locale": "ar",
     "app_name_news": "الإخبارى",
     "app_name_app": "التطبيق",
-    "ago": "منذ",
+    "today": "اليوم",
+    "day_ago": "منذ يوم",
     "error": "خطأ",
     "theme_dark": "الوضع المظلم",
     "theme_light": "الوضع الفاتح",

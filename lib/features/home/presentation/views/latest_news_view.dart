@@ -26,8 +26,8 @@ class LatestNewsView extends StatelessWidget {
             return SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
-                  if (index < state.newest.length) {
-                    final item = state.newest[index];
+                  if (index < state.latest.length) {
+                    final item = state.latest[index];
                     return Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 32.w,
@@ -38,7 +38,7 @@ class LatestNewsView extends StatelessWidget {
                     return const LatestNewsShimmerListTile();
                   }
                 },
-                childCount: state.newest.length + (state.isLoadingMore ? 3 : 0),
+                childCount: state.latest.length + (state.isLoadingMore ? 3 : 0),
               ),
             );
           }
