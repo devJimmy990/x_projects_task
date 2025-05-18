@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_projects_task/core/ui/bookmark_button.dart';
 import 'package:x_projects_task/core/ui/image_handler.dart';
+import 'package:x_projects_task/core/ui/bookmark_button.dart';
 import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/core/constants/extensions.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';

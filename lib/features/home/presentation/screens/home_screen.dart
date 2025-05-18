@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
+import 'package:x_projects_task/features/bookmark/cubit/bookmark_cubit.dart';
+import 'package:x_projects_task/features/bookmark/cubit/bookmark_state.dart';
 import 'package:x_projects_task/features/home/cubit/news_cubit.dart';
 import 'package:x_projects_task/features/home/cubit/news_state.dart';
 import 'package:x_projects_task/features/home/presentation/views/home_app_bar.dart';
@@ -78,17 +80,46 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: const Drawer(),
 
-      body: BlocListener<NewsCubit, NewsState>(
-        listener: (context, state) {
-          if (state is NewsError) {
-            Fluttertoast.showToast(
-              msg: state.error,
-              textColor: Colors.white,
-              gravity: ToastGravity.BOTTOM,
-              backgroundColor: Colors.red,
-            );
-          }
-        },
+      body: MultiBlocListener(
+        listeners: [
+          BlocListener<NewsCubit, NewsState>(
+            listener: (context, state) {
+              if (state is NewsError) {
+                Fluttertoast.showToast(
+                  msg: state.error,
+                  textColor: Colors.white,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.red,
+                );
+              }
+            },
+          ),
+          BlocListener<BookmarkCubit, BookmarkState>(
+            listener: (context, state) {
+              if (state is BookmarkError) {
+                Fluttertoast.showToast(
+                  msg: state.error,
+                  textColor: Colors.white,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.red,
+                );
+              }
+              if (state is BookmarkUpdated) {
+                Fluttertoast.showToast(
+                  textColor: Colors.white,
+                  gravity: ToastGravity.BOTTOM,
+                  toastLength: Toast.LENGTH_SHORT,
+                  backgroundColor:
+                      state.action == "add" ? Colors.green : Colors.red,
+                  msg:
+                      state.action == "add"
+                          ? Localization.bookmarkAdded
+                          : Localization.bookmarkRemoved,
+                );
+              }
+            },
+          ),
+        ],
         child: CustomScrollView(
           controller: _controller,
           slivers: [
