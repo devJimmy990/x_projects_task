@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/constants/colors_manager.dart';
 
 class FloatingBottomContainer extends StatelessWidget {
   final List<Widget> children;
@@ -11,7 +12,7 @@ class FloatingBottomContainer extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Card(
         elevation: 5,
-        color: Colors.white,
+        color: ColorsManager.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(28.r),
         ),

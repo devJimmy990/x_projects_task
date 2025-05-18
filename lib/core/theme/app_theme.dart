@@ -5,18 +5,12 @@ import 'package:x_projects_task/core/theme/text_style.dart';
 
 class AppThemeData {
   static final ThemeData light = ThemeData(
+    brightness: Brightness.light,
     primaryColor: ColorsManager.blackSecondary,
     scaffoldBackgroundColor: ColorsManager.white,
     colorScheme: const ColorScheme.light(
-      brightness: Brightness.light,
       primary: ColorsManager.blackSecondary,
-      // onPrimary: ColorsManager.white,
-      // secondary: ColorsManager.secondary,
       onSecondary: ColorsManager.black,
-      // surface: ColorManager.bgLight,
-      // onSurface: ColorManager.textPrimaryLight,
-      // error: ColorManager.error,
-      // onError: ColorManager.white,
     ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
@@ -24,63 +18,54 @@ class AppThemeData {
       backgroundColor: ColorsManager.white,
       foregroundColor: ColorsManager.white,
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: ColorsManager.blackPrimary,
+        statusBarColor: ColorsManager.white,
         statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
-    ),
-    // tabBarTheme: TabBarTheme(
-    //   labelColor: ColorManager.textPrimaryLight,
-    //   unselectedLabelColor: ColorManager.grey,
-    //   indicator: UnderlineTabIndicator(
-    //     borderSide: BorderSide(color: ColorManager.lightPrimary, width: 2.0),
-    //   ),
-    // ),
-    // floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    //   backgroundColor: ColorManager.actionButton,
-    //   foregroundColor: ColorManager.white,
-    // ),
-    textTheme: AppTextStyle.light,
-    // inputDecorationTheme: MyInputFieldTheme.light,
-  );
-
-  static final ThemeData dark = ThemeData(
-    primaryColor: ColorsManager.blackSecondary,
-    scaffoldBackgroundColor: ColorsManager.blackPrimary,
-    colorScheme: const ColorScheme.dark(
-      brightness: Brightness.dark,
-      primary: ColorsManager.blackSecondary,
-      // onPrimary: ColorsManager.white,
-      // secondary: ColorsManager.secondary,
-      onSecondary: ColorsManager.black,
-      // surface: ColorManager.bgLight,
-      // onSurface: ColorManager.textPrimaryLight,
-      // error: ColorManager.error,
-      // onError: ColorManager.white,
-    ),
-    appBarTheme: const AppBarTheme(
-      elevation: 0,
-      surfaceTintColor: ColorsManager.white,
-      backgroundColor: ColorsManager.white,
-      foregroundColor: ColorsManager.white,
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: ColorsManager.blackPrimary,
-        statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
       ),
     ),
-    // tabBarTheme: TabBarTheme(
-    //   labelColor: ColorManager.textPrimaryLight,
-    //   unselectedLabelColor: ColorManager.grey,
-    //   indicator: UnderlineTabIndicator(
-    //     borderSide: BorderSide(color: ColorManager.lightPrimary, width: 2.0),
-    //   ),
-    // ),
-    // floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    //   backgroundColor: ColorManager.actionButton,
-    //   foregroundColor: ColorManager.white,
-    // ),
+    textTheme: AppTextStyle.light,
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        backgroundColor: ColorsManager.blackSecondary,
+        foregroundColor: Colors.white,
+      ),
+    ),
+    radioTheme: RadioThemeData(
+      overlayColor: WidgetStateProperty.all(ColorsManager.blackPrimary),
+      fillColor: WidgetStateProperty.all(ColorsManager.blackPrimary),
+    ),
+  );
+
+  static final ThemeData dark = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: ColorsManager.blackSecondary,
+    scaffoldBackgroundColor: ColorsManager.blackPrimary,
+    colorScheme: const ColorScheme.dark(
+      primary: ColorsManager.blackSecondary,
+      onSecondary: ColorsManager.black,
+    ),
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      surfaceTintColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+      foregroundColor: Colors.transparent,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: ColorsManager.blackSecondary,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+    ),
     textTheme: AppTextStyle.dark,
-    // inputDecorationTheme: MyInputFieldTheme.dark,
+
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: ColorsManager.blackSecondary,
+      ),
+    ),
+    radioTheme: RadioThemeData(
+      fillColor: WidgetStateProperty.all(ColorsManager.white),
+    ),
+    cardTheme: const CardTheme(color: ColorsManager.greyDark),
   );
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/features/settings/cubit/settings_cubit.dart';
 import 'package:x_projects_task/features/settings/cubit/settings_state.dart';
+import 'package:x_projects_task/features/settings/model/option_model.dart';
+import 'package:x_projects_task/features/settings/settings_options_card.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -13,7 +16,6 @@ class SettingsScreen extends StatelessWidget {
       child: BlocBuilder<SettingsCubit, SettingsState>(
         builder: (context, state) {
           final isDarkMode = state.theme.brightness == Brightness.dark;
-          final isArabic = state.locale == "ar";
           final cubit = context.read<SettingsCubit>();
 
           return Padding(
@@ -21,43 +23,36 @@ class SettingsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildCard(
-                  child: SwitchListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
-                    secondary: const Icon(Icons.dark_mode),
-                    title: Text("Dark Mode", style: TextStyle(fontSize: 16.sp)),
-                    value: isDarkMode,
-                    onChanged: (value) => cubit.toggleTheme(),
-                  ),
+                SettingsOptionsCard(
+                  title: Localization.selectTheme,
+                  groupValue: isDarkMode ? "dark" : "light",
+                  onChanged: (_) => cubit.toggleTheme(),
+                  options: [
+                    OptionModel(title: Localization.themeDark, value: "dark"),
+                    OptionModel(title: Localization.themeLight, value: "light"),
+                  ],
                 ),
                 SizedBox(height: 16.h),
-                _buildCard(
-                  child: ListTile(
-                    leading: const Icon(Icons.language),
-                    title: Text(
-                      isArabic ? "Arabic" : "English",
-                      style: TextStyle(fontSize: 16.sp),
+                SettingsOptionsCard(
+                  title: Localization.selectLanguage,
+                  groupValue: state.locale,
+                  onChanged: (_) => cubit.toggleLocale(),
+                  options: [
+                    OptionModel(
+                      title: Localization.languageEnglish,
+                      value: "en",
                     ),
-                    trailing: TextButton.icon(
-                      onPressed: cubit.toggleLocale,
-                      icon: const Icon(Icons.change_circle_outlined),
-                      label: Text("Switch", style: TextStyle(fontSize: 16.sp)),
+                    OptionModel(
+                      title: Localization.languageArabic,
+                      value: "ar",
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
           );
         },
       ),
-    );
-  }
-
-  Widget _buildCard({required Widget child}) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-      elevation: 2,
-      child: child,
     );
   }
 }

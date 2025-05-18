@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
 import 'package:x_projects_task/features/home/cubit/news_cubit.dart';
@@ -19,14 +20,16 @@ class HomeScreen extends StatefulWidget {
 
   static Widget _buildLatestNewsHeader(BuildContext context) {
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 4.h),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("Latest News", style: Theme.of(context).textTheme.bodyMedium),
+          Text(
+            Localization.latestNews,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
           SvgIconButton(
-            size: 20,
             icon: AssetsManager.assetsIconsBack,
             onTap: () {
               Navigator.push(
@@ -74,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onLeadingPressed: () => Scaffold.of(context).openDrawer(),
       ),
       drawer: const Drawer(),
+
       body: BlocListener<NewsCubit, NewsState>(
         listener: (context, state) {
           if (state is NewsError) {

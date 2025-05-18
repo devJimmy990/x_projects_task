@@ -80,59 +80,65 @@ class NewsItemDetailsScreen extends StatelessWidget {
             ),
 
             SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
-                child: Column(
-                  spacing: 32.h,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      spacing: 12.w,
-                      children: [
-                        CircleAvatar(
-                          radius: 20.r,
-                          backgroundImage: const AssetImage(
-                            AssetsManager.assetsImagesUser,
+              child: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 32.w,
+                    vertical: 16.h,
+                  ),
+                  child: Column(
+                    spacing: 32.h,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        spacing: 12.w,
+                        children: [
+                          CircleAvatar(
+                            radius: 20.r,
+                            backgroundImage: const AssetImage(
+                              AssetsManager.assetsImagesUser,
+                            ),
                           ),
-                        ),
-                        Text(
-                          item.author,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      spacing: 14.h,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Technology".toUpperCase(),
-                          style: Theme.of(context).textTheme.labelLarge
-                              ?.copyWith(color: ColorsManager.blackSecondary),
-                        ),
-                        Text(
-                          item.title,
-                          softWrap: true,
-                          style: Theme.of(context).textTheme.headlineMedium,
-                        ),
+                          Text(
+                            item.author,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ],
+                      ),
+                      Column(
+                        spacing: 14.h,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Technology".toUpperCase(),
+                            style: Theme.of(context).textTheme.labelLarge
+                                ?.copyWith(color: ColorsManager.blackSecondary),
+                          ),
+                          Text(
+                            item.title,
+                            softWrap: true,
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
 
-                        Text(
-                          item.publishedAt.toLongDateFormat(),
-                          style: Theme.of(context).textTheme.bodySmall
-                              ?.copyWith(fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                    Divider(
-                      color: const Color.fromRGBO(20, 30, 40, 0.08),
-                      thickness: 2.h,
-                    ),
-                    Text(
-                      item.content,
-                      textAlign: TextAlign.justify,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ],
+                          Text(
+                            item.publishedAt.toLongDateFormat(),
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      Divider(
+                        color: const Color.fromRGBO(20, 30, 40, 0.08),
+                        thickness: 2.h,
+                      ),
+                      Text(
+                        item.content,
+                        textAlign: TextAlign.justify,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ago": MessageLookupByLibrary.simpleMessage("ago"),
+    "app_name_app": MessageLookupByLibrary.simpleMessage("App"),
+    "app_name_news": MessageLookupByLibrary.simpleMessage("News"),
+    "bookmark_added": MessageLookupByLibrary.simpleMessage("Added to bookmark"),
+    "bookmark_removed": MessageLookupByLibrary.simpleMessage(
+      "Removed from bookmark",
+    ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "language_arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "language_english": MessageLookupByLibrary.simpleMessage("English"),
+    "latest_bookmark": MessageLookupByLibrary.simpleMessage("Latest Bookmark"),
+    "latest_news": MessageLookupByLibrary.simpleMessage("Latest News"),
+    "sa": MessageLookupByLibrary.simpleMessage(""),
+    "search_empty": MessageLookupByLibrary.simpleMessage("No results found"),
+    "search_hint": MessageLookupByLibrary.simpleMessage("Search here..."),
+    "search_news": MessageLookupByLibrary.simpleMessage("News"),
+    "select_language": MessageLookupByLibrary.simpleMessage("Select Language"),
+    "select_theme": MessageLookupByLibrary.simpleMessage("Select Theme"),
+    "theme_dark": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "theme_light": MessageLookupByLibrary.simpleMessage("Light Mode"),
+  };
 }

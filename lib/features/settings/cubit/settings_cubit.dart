@@ -17,6 +17,10 @@ class SettingsCubit extends HydratedCubit<SettingsState> {
         ? SettingsInitial(locale: state.locale, theme: AppThemeData.dark)
         : SettingsInitial(locale: state.locale, theme: AppThemeData.light),
   );
+
+  bool get isEnglish => state.locale == "en";
+  bool get isDark => state.theme == AppThemeData.dark;
+
   @override
   SettingsState? fromJson(Map<String, dynamic> json) {
     final isDark = json['isDark'] as bool;

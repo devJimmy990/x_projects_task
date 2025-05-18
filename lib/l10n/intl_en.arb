@@ -1,1 +1,20 @@
-{}
+{
+    "app_name_news": "News",
+    "app_name_app": "App",
+    "ago": "ago",
+    "error": "Error",
+    "theme_dark": "Dark Mode",
+    "theme_light": "Light Mode",
+    "select_theme": "Select Theme",
+    "select_language": "Select Language",
+    "language_arabic": "Arabic",
+    "language_english": "English",
+    "search_news": "News",
+    "search_hint": "Search here...",
+    "search_empty": "No results found",
+    "latest_news": "Latest News",
+    "latest_bookmark": "Latest Bookmark",
+    "bookmark_added": "Added to bookmark",
+    "bookmark_removed": "Removed from bookmark",
+    "sa": ""
+}
