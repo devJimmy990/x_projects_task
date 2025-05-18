@@ -13,4 +13,16 @@ class NewsRepository {
       rethrow;
     }
   }
+
+  Future<List<NewsItem>> searchNews({
+    required int page,
+    required String query,
+  }) async {
+    try {
+      final data = await _dataSource.searchNews(query, page: page);
+      return data.isEmpty ? [] : data.map((e) => NewsItem.fromJson(e)).toList();
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

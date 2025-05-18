@@ -24,4 +24,25 @@ class RemoteNewsDataSource implements BaseNewsDataSource {
       rethrow;
     }
   }
+
+  @override
+  Future<List<Map<String, dynamic>>> searchNews(
+    String query, {
+    required int page,
+  }) async {
+    try {
+      final response = await _connection.get(
+        EndPoint.everything,
+        params: {
+          "q": query,
+          "page": page,
+          "sortBy": "publishedAt",
+          "pageSize": 20,
+        },
+      );
+      return List<Map<String, dynamic>>.from(response["articles"]);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
