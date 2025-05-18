@@ -58,6 +58,10 @@ class AssetsManager {
   /// assets/icons/share.svg
   static const String assetsIconsShare = "assets/icons/share.svg";
 
+  /// Assets for assetsImagesBookmarkEmpty
+  /// assets/images/bookmark-empty.png
+  static const String assetsImagesBookmarkEmpty = "assets/images/bookmark-empty.png";
+
   /// Assets for assetsImagesLogo
   /// assets/images/logo.png
   static const String assetsImagesLogo = "assets/images/logo.png";

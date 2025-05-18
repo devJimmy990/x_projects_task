@@ -51,16 +51,7 @@ class BookmarkButton extends StatelessWidget {
           key: const Key("bookmark-outline"),
           color: fill,
           icon: AssetsManager.assetsIconsBookmarkOutline,
-          onTap: () {
-            context.read<BookmarkCubit>().addBookmark(item);
-            Fluttertoast.showToast(
-              textColor: Colors.white,
-              gravity: ToastGravity.BOTTOM,
-              toastLength: Toast.LENGTH_LONG,
-              backgroundColor: Colors.blue,
-              msg: item.id.toString(),
-            );
-          },
+          onTap: () => context.read<BookmarkCubit>().addBookmark(item),
         );
       },
     );
