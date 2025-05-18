@@ -1,4 +1,4 @@
-package com.example.x_projects_task
+package com.dev_jimmy.netlify
 
 import io.flutter.embedding.android.FlutterActivity
 
