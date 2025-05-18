@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:x_projects_task/core/constants/colors_manager.dart';
 
 class SvgIconButton extends StatelessWidget {
   final String icon;
@@ -22,8 +23,8 @@ class SvgIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final iconColor =
         isSelected == true
-            ? const Color.fromRGBO(20, 30, 40, 1)
-            : color ?? const Color.fromRGBO(20, 30, 40, 0.48);
+            ? ColorsManager.blackPrimary
+            : color ?? ColorsManager.blackSecondary;
 
     return IconButton(
       key: super.key,
@@ -34,6 +35,7 @@ class SvgIconButton extends StatelessWidget {
         colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
       ),
       onPressed: onTap,
+      style: IconButton.styleFrom(backgroundColor: Colors.transparent),
     );
   }
 }

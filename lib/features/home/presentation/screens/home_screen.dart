@@ -20,8 +20,8 @@ class HomeScreen extends StatefulWidget {
 
   static Widget _buildLatestNewsHeader(BuildContext context) {
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 4.h),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -30,7 +30,6 @@ class HomeScreen extends StatefulWidget {
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           SvgIconButton(
-            size: 20,
             icon: AssetsManager.assetsIconsBack,
             onTap: () {
               Navigator.push(

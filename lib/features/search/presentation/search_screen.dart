@@ -109,10 +109,7 @@ class _SearchBodyState extends State<_SearchBody> {
                         setState(() {});
                       },
                       icon: const Icon(Icons.clear),
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        padding: EdgeInsets.zero,
-                      ),
+                      style: IconButton.styleFrom(padding: EdgeInsets.zero),
                     )
                     : const CircleAvatar(
                       radius: 20,

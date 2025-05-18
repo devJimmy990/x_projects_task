@@ -4,204 +4,43 @@ import 'package:x_projects_task/core/constants/colors_manager.dart';
 
 class AppTextStyle extends TextTheme {
   static TextTheme get light => TextTheme(
-    // Large Titles (36px - 900)
-    displayLarge: TextStyle(
-      fontSize: 36.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Main Headlines (26px - 400)
-    displayMedium: TextStyle(
-      fontSize: 26.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Section Headers (22px - 800)
-    headlineLarge: TextStyle(
-      fontSize: 22.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Titles or Buttons (18px - 900/800)
-    headlineMedium: TextStyle(
-      fontSize: 18.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    titleLarge: TextStyle(
-      fontSize: 18.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Content Headings (16px - 900 / 400)
-    titleMedium: TextStyle(
-      fontSize: 16.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    bodyLarge: TextStyle(
-      fontSize: 16.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Regular body text (14px - 400, 900)
-    bodyMedium: TextStyle(
-      fontSize: 14.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    titleSmall: TextStyle(
-      fontSize: 14.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Smaller content (12px - 900, 400)
-    bodySmall: TextStyle(
-      fontSize: 12.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w200,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    labelLarge: TextStyle(
-      fontSize: 12.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    // Tiny text (10px and 8px — fallback to 400)
-    labelMedium: TextStyle(
-      fontSize: 10.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.blackPrimary,
-    ),
-
-    labelSmall: TextStyle(
-      fontSize: 8.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.blackPrimary,
-    ),
+    displayLarge: _style(36, FontWeight.w800, ColorsManager.blackPrimary),
+    displayMedium: _style(26, FontWeight.w400, ColorsManager.blackPrimary),
+    headlineLarge: _style(22, FontWeight.w800, ColorsManager.blackPrimary),
+    headlineMedium: _style(18, FontWeight.w800, ColorsManager.blackPrimary),
+    titleLarge: _style(18, FontWeight.w800, ColorsManager.blackPrimary),
+    titleMedium: _style(16, FontWeight.w800, ColorsManager.blackPrimary),
+    bodyLarge: _style(16, FontWeight.w400, ColorsManager.blackPrimary),
+    bodyMedium: _style(14, FontWeight.w400, ColorsManager.blackPrimary),
+    titleSmall: _style(14, FontWeight.w800, ColorsManager.blackPrimary),
+    bodySmall: _style(12, FontWeight.w200, ColorsManager.blackPrimary),
+    labelLarge: _style(12, FontWeight.w800, ColorsManager.blackPrimary),
+    labelMedium: _style(10, FontWeight.w400, ColorsManager.blackPrimary),
+    labelSmall: _style(8, FontWeight.w400, ColorsManager.blackPrimary),
   );
 
   static TextTheme get dark => TextTheme(
-    // Large Titles (36px - 900)
-    displayLarge: TextStyle(
-      fontSize: 36.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    // Main Headlines (26px - 400)
-    displayMedium: TextStyle(
-      fontSize: 26.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.white,
-    ),
-
-    // Section Headers (22px - 800)
-    headlineLarge: TextStyle(
-      fontSize: 22.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    // Titles or Buttons (18px - 900/800)
-    headlineMedium: TextStyle(
-      fontSize: 18.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    titleLarge: TextStyle(
-      fontSize: 18.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    // Content Headings (16px - 900 / 400)
-    titleMedium: TextStyle(
-      fontSize: 16.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    bodyLarge: TextStyle(
-      fontSize: 16.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.white,
-    ),
-
-    // Regular body text (14px - 400, 900)
-    bodyMedium: TextStyle(
-      fontSize: 14.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.white,
-    ),
-
-    titleSmall: TextStyle(
-      fontSize: 14.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    // Smaller content (12px - 900, 400)
-    bodySmall: TextStyle(
-      fontSize: 12.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w200,
-      color: ColorsManager.white,
-    ),
-
-    labelLarge: TextStyle(
-      fontSize: 12.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w800,
-      color: ColorsManager.white,
-    ),
-
-    // Tiny text (10px and 8px — fallback to 400)
-    labelMedium: TextStyle(
-      fontSize: 10.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.white,
-    ),
-
-    labelSmall: TextStyle(
-      fontSize: 8.sp,
-      fontFamily: "telegraf",
-      fontWeight: FontWeight.w400,
-      color: ColorsManager.white,
-    ),
+    displayLarge: _style(36, FontWeight.w800, ColorsManager.white),
+    displayMedium: _style(26, FontWeight.w400, ColorsManager.white),
+    headlineLarge: _style(22, FontWeight.w800, ColorsManager.white),
+    headlineMedium: _style(18, FontWeight.w800, ColorsManager.white),
+    titleLarge: _style(18, FontWeight.w800, ColorsManager.white),
+    titleMedium: _style(16, FontWeight.w800, ColorsManager.white),
+    bodyLarge: _style(16, FontWeight.w400, ColorsManager.white),
+    bodyMedium: _style(14, FontWeight.w400, ColorsManager.white),
+    titleSmall: _style(14, FontWeight.w800, ColorsManager.white),
+    bodySmall: _style(12, FontWeight.w200, ColorsManager.white),
+    labelLarge: _style(12, FontWeight.w800, ColorsManager.white),
+    labelMedium: _style(10, FontWeight.w400, ColorsManager.white),
+    labelSmall: _style(8, FontWeight.w400, ColorsManager.white),
   );
+
+  static TextStyle _style(double size, FontWeight weight, Color color) {
+    return TextStyle(
+      fontSize: size.sp,
+      fontFamily: "telegraf",
+      fontWeight: weight,
+      color: color,
+    );
+  }
 }

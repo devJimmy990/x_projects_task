@@ -40,19 +40,11 @@ class HomeScreenAppBarView extends StatelessWidget
                         children: [
                           TextSpan(
                             text: Localization.appNameNews,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.titleLarge?.copyWith(
-                              color: const Color.fromRGBO(34, 37, 42, 1),
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                           TextSpan(
                             text: Localization.appNameApp,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.bodyLarge?.copyWith(
-                              color: const Color.fromRGBO(34, 37, 42, 1),
-                            ),
+                            style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ],
                       ),
