@@ -65,9 +65,14 @@ class S {
     return Intl.message('App', name: 'app_name_app', desc: '', args: []);
   }
 
-  /// `ago`
-  String get ago {
-    return Intl.message('ago', name: 'ago', desc: '', args: []);
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `day ago`
+  String get day_ago {
+    return Intl.message('day ago', name: 'day_ago', desc: '', args: []);
   }
 
   /// `Error`
@@ -178,11 +183,6 @@ class S {
       desc: '',
       args: [],
     );
-  }
-
-  /// ``
-  String get sa {
-    return Intl.message('', name: 'sa', desc: '', args: []);
   }
 }
 

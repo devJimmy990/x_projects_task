@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "ago": MessageLookupByLibrary.simpleMessage("منذ"),
     "app_name_app": MessageLookupByLibrary.simpleMessage("التطبيق"),
     "app_name_news": MessageLookupByLibrary.simpleMessage("الإخبارى"),
     "bookmark_added": MessageLookupByLibrary.simpleMessage(
@@ -31,12 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "bookmark_removed": MessageLookupByLibrary.simpleMessage(
       "تم الحذف من المفضلة",
     ),
+    "day_ago": MessageLookupByLibrary.simpleMessage("منذ يوم"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "language_arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "language_english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "latest_bookmark": MessageLookupByLibrary.simpleMessage("أهم الأخبار"),
     "latest_news": MessageLookupByLibrary.simpleMessage("أحدث الأخبار"),
-    "sa": MessageLookupByLibrary.simpleMessage(""),
     "search_empty": MessageLookupByLibrary.simpleMessage("لا يوجد نتايج"),
     "search_hint": MessageLookupByLibrary.simpleMessage("ابحث هنا..."),
     "search_news": MessageLookupByLibrary.simpleMessage("خبر"),
@@ -44,5 +43,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_theme": MessageLookupByLibrary.simpleMessage("إختيار النمط"),
     "theme_dark": MessageLookupByLibrary.simpleMessage("الوضع المظلم"),
     "theme_light": MessageLookupByLibrary.simpleMessage("الوضع الفاتح"),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
   };
 }

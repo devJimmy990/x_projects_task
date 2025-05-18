@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:x_projects_task/core/helper/localization.dart';
 
 extension StringExtension on String {
   String capitalize() {
@@ -10,23 +11,13 @@ extension StringExtension on String {
 
 extension TimeAgoExtension on DateTime {
   String timeAgo() {
-    // final yesterday = DateTime.now().toUtc().subtract(const Duration(days: 1));
-    // final difference = yesterday.difference(toUtc());
-
     final now = DateTime.now().toUtc();
-    final difference = now.difference(toUtc());
+    final diff = now.difference(toUtc());
 
-    if (difference.inMinutes < 2) {
-      return 'soon';
-    } else if (difference.inMinutes < 60) {
-      final mins = difference.inMinutes;
-      return '${mins == 1 ? "min" : "$mins mins"} ago';
-    } else if (difference.inHours < 24) {
-      final hours = difference.inHours;
-      return ' ${hours == 1 ? "hour" : "$hours hours"} ago';
+    if (diff.inDays == 0) {
+      return Localization.today;
     } else {
-      final days = difference.inDays;
-      return '${days == 1 ? "day" : "$days days"} ago';
+      return Localization.dayAgo;
     }
   }
 
