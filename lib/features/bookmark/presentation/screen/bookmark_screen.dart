@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/constants/assets_manager.dart';
 import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_cubit.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_state.dart';
@@ -36,9 +37,8 @@ class BookmarkScreen extends StatelessWidget {
         },
         builder: (context, state) {
           return state is! BookmarkUpdated || state.bookmarks.isEmpty
-              ? Text(
-                "No Bookmarks",
-                style: Theme.of(context).textTheme.displayMedium,
+              ? Center(
+                child: Image.asset(AssetsManager.assetsImagesBookmarkEmpty),
               )
               : Column(
                 spacing: 13.h,
