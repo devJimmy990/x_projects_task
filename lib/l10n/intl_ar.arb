@@ -1,1 +1,20 @@
-{}
+{
+    "app_name_news": "الإخبارى",
+    "app_name_app": "التطبيق",
+    "ago": "منذ",
+    "error": "خطأ",
+    "theme_dark": "الوضع المظلم",
+    "theme_light": "الوضع الفاتح",
+    "select_theme": "إختيار النمط",
+    "select_language": "إختيار اللغة",
+    "language_arabic": "العربية",
+    "language_english": "الإنجليزية",
+    "search_news": "خبر",
+    "search_hint": "ابحث هنا...",
+    "search_empty": "لا يوجد نتايج",
+    "latest_news": "أحدث الأخبار",
+    "latest_bookmark": "أهم الأخبار",
+    "bookmark_added": "تمت الإضافة في المفضلة",
+    "bookmark_removed": "تم الحذف من المفضلة",
+    "sa": ""
+}

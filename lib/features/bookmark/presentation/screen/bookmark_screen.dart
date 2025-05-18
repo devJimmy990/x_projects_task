@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_cubit.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_state.dart';
 import 'package:x_projects_task/features/bookmark/presentation/widgets/bookmark_list_tile.dart';
@@ -29,7 +30,7 @@ class BookmarkScreen extends StatelessWidget {
               gravity: ToastGravity.BOTTOM,
               toastLength: Toast.LENGTH_SHORT,
               backgroundColor: Colors.red,
-              msg: "Removed from bookmark",
+              msg: Localization.bookmarkRemoved,
             );
           }
         },
@@ -46,22 +47,25 @@ class BookmarkScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 32.w),
                     child: Text(
-                      "Latest Bookmark",
+                      Localization.latestBookmark,
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                   ),
                   Expanded(
-                    child: ListView.builder(
-                      itemCount: state.bookmarks.length,
-                      itemBuilder: (context, index) {
-                        return BookmarkListTile(
-                          state.bookmarks[index],
-                          key: Key(state.bookmarks[index].id),
-                          onDismissed: () {
-                            context.read<BookmarkCubit>().removeAt(index);
-                          },
-                        );
-                      },
+                    child: Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: ListView.builder(
+                        itemCount: state.bookmarks.length,
+                        itemBuilder: (context, index) {
+                          return BookmarkListTile(
+                            state.bookmarks[index],
+                            key: Key(state.bookmarks[index].id),
+                            onDismissed: () {
+                              context.read<BookmarkCubit>().removeAt(index);
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],

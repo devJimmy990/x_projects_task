@@ -54,6 +54,136 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `News`
+  String get app_name_news {
+    return Intl.message('News', name: 'app_name_news', desc: '', args: []);
+  }
+
+  /// `App`
+  String get app_name_app {
+    return Intl.message('App', name: 'app_name_app', desc: '', args: []);
+  }
+
+  /// `ago`
+  String get ago {
+    return Intl.message('ago', name: 'ago', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get theme_dark {
+    return Intl.message('Dark Mode', name: 'theme_dark', desc: '', args: []);
+  }
+
+  /// `Light Mode`
+  String get theme_light {
+    return Intl.message('Light Mode', name: 'theme_light', desc: '', args: []);
+  }
+
+  /// `Select Theme`
+  String get select_theme {
+    return Intl.message(
+      'Select Theme',
+      name: 'select_theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Language`
+  String get select_language {
+    return Intl.message(
+      'Select Language',
+      name: 'select_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get language_arabic {
+    return Intl.message('Arabic', name: 'language_arabic', desc: '', args: []);
+  }
+
+  /// `English`
+  String get language_english {
+    return Intl.message(
+      'English',
+      name: 'language_english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get search_news {
+    return Intl.message('News', name: 'search_news', desc: '', args: []);
+  }
+
+  /// `Search here...`
+  String get search_hint {
+    return Intl.message(
+      'Search here...',
+      name: 'search_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results found`
+  String get search_empty {
+    return Intl.message(
+      'No results found',
+      name: 'search_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest News`
+  String get latest_news {
+    return Intl.message('Latest News', name: 'latest_news', desc: '', args: []);
+  }
+
+  /// `Latest Bookmark`
+  String get latest_bookmark {
+    return Intl.message(
+      'Latest Bookmark',
+      name: 'latest_bookmark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to bookmark`
+  String get bookmark_added {
+    return Intl.message(
+      'Added to bookmark',
+      name: 'bookmark_added',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Removed from bookmark`
+  String get bookmark_removed {
+    return Intl.message(
+      'Removed from bookmark',
+      name: 'bookmark_removed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get sa {
+    return Intl.message('', name: 'sa', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

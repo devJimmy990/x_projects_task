@@ -11,34 +11,40 @@ class LatestNewsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NewsCubit, NewsState>(
-      builder: (context, state) {
-        if (state is NewsLoading) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => const LatestNewsShimmerListTile(),
-              childCount: 5,
-            ),
-          );
-        } else if (state is NewsLoaded) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              if (index < state.latest.length) {
-                final item = state.latest[index];
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 32.w,
-                  ).copyWith(bottom: 16.h),
-                  child: LatestNewsItemListTile(item, key: Key(item.id)),
-                );
-              } else {
-                return const LatestNewsShimmerListTile();
-              }
-            }, childCount: state.latest.length + (state.isLoadingMore ? 3 : 0)),
-          );
-        }
-        return SliverToBoxAdapter(child: Text("${state.runtimeType}"));
-      },
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: BlocBuilder<NewsCubit, NewsState>(
+        builder: (context, state) {
+          if (state is NewsLoading) {
+            return SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => const LatestNewsShimmerListTile(),
+                childCount: 5,
+              ),
+            );
+          } else if (state is NewsLoaded) {
+            return SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  if (index < state.newest.length) {
+                    final item = state.newest[index];
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32.w,
+                      ).copyWith(bottom: 16.h),
+                      child: LatestNewsItemListTile(item, key: Key(item.id)),
+                    );
+                  } else {
+                    return const LatestNewsShimmerListTile();
+                  }
+                },
+                childCount: state.newest.length + (state.isLoadingMore ? 3 : 0),
+              ),
+            );
+          }
+          return SliverToBoxAdapter(child: Text("${state.runtimeType}"));
+        },
+      ),
     );
   }
 }
