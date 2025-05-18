@@ -53,26 +53,13 @@ class NearestNewsItemCard extends StatelessWidget {
                                   ?.copyWith(color: Colors.white),
                             ),
                             Text(
-                              item.publishedAt.timeAgo(),
+                              calcDuration(item.publishedAt.timeAgo()),
                               style: Theme.of(context).textTheme.labelSmall
                                   ?.copyWith(color: Colors.white),
                             ),
                           ],
                         ),
-                        Text(
-                          item.id.length.toString(),
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          item.id,
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            color: Colors.white,
-                          ),
-                        ),
+
                         const Spacer(),
                         Padding(
                           padding: EdgeInsetsDirectional.only(end: 10.w),
@@ -109,5 +96,9 @@ class NearestNewsItemCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String calcDuration(String val) {
+    return val;
   }
 }
