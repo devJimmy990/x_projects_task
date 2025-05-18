@@ -15,14 +15,7 @@ class LatestNewsView extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: BlocBuilder<NewsCubit, NewsState>(
         builder: (context, state) {
-          if (state is NewsLoading) {
-            return SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => const LatestNewsShimmerListTile(),
-                childCount: 5,
-              ),
-            );
-          } else if (state is NewsLoaded) {
+          if (state is NewsLoaded) {
             return SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
@@ -42,7 +35,12 @@ class LatestNewsView extends StatelessWidget {
               ),
             );
           }
-          return SliverToBoxAdapter(child: Text("${state.runtimeType}"));
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => const LatestNewsShimmerListTile(),
+              childCount: 5,
+            ),
+          );
         },
       ),
     );

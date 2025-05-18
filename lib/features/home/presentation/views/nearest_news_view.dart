@@ -15,16 +15,6 @@ class NearestNewsView extends StatelessWidget {
       height: 320.h,
       child: BlocBuilder<NewsCubit, NewsState>(
         builder: (context, state) {
-          if (state is NewsLoading) {
-            return ListView.separated(
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (_, __) => SizedBox(width: 16.w),
-              padding: EdgeInsetsDirectional.only(start: 32.w, end: 16.w),
-              itemBuilder:
-                  (context, index) => const NearestNewsItemShimmerCard(),
-            );
-          }
           if (state is NewsLoaded) {
             return ListView.separated(
               itemCount: state.newest.length,
@@ -38,7 +28,13 @@ class NearestNewsView extends StatelessWidget {
                   ),
             );
           }
-          return const Center(child: CircularProgressIndicator());
+          return ListView.separated(
+            itemCount: 3,
+            scrollDirection: Axis.horizontal,
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
+            padding: EdgeInsetsDirectional.only(start: 32.w, end: 16.w),
+            itemBuilder: (context, index) => const NearestNewsItemShimmerCard(),
+          );
         },
       ),
     );
