@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_projects_task/core/helper/localization.dart';
 import 'package:x_projects_task/core/ui/svg_icon_button.dart';
 import 'package:x_projects_task/core/constants/assets_manager.dart';
+import 'package:x_projects_task/core/validator/network.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_cubit.dart';
 import 'package:x_projects_task/features/bookmark/cubit/bookmark_state.dart';
 import 'package:x_projects_task/features/home/cubit/news_cubit.dart';
@@ -13,6 +14,8 @@ import 'package:x_projects_task/features/home/presentation/views/home_app_bar.da
 import 'package:x_projects_task/features/home/presentation/views/latest_news_view.dart';
 import 'package:x_projects_task/features/home/presentation/views/nearest_news_view.dart';
 import 'package:x_projects_task/features/home/presentation/screens/all_latest_news_screen.dart';
+import 'package:x_projects_task/features/settings/cubit/settings_cubit.dart';
+import 'package:x_projects_task/features/settings/cubit/settings_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +26,7 @@ class HomeScreen extends StatefulWidget {
   static Widget _buildLatestNewsHeader(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 4.h),
-
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,13 +34,35 @@ class HomeScreen extends StatefulWidget {
             Localization.latestNews,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          SvgIconButton(
-            icon: AssetsManager.assetsIconsBack,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const AllLatestNewsScreen()),
-              );
+          BlocBuilder<SettingsCubit, SettingsState>(
+            builder: (context, state) {
+              final code = Localizations.localeOf(context).languageCode;
+              return code == "en"
+                  ? SvgIconButton(
+                    icon: AssetsManager.assetsIconsBack,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AllLatestNewsScreen(),
+                        ),
+                      );
+                    },
+                  )
+                  : RotatedBox(
+                    quarterTurns: 2,
+                    child: SvgIconButton(
+                      icon: AssetsManager.assetsIconsBack,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const AllLatestNewsScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  );
             },
           ),
         ],
@@ -86,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
             listener: (context, state) {
               if (state is NewsError) {
                 Fluttertoast.showToast(
-                  msg: state.error,
+                  msg: NetworkValidator.validate(state.error),
                   textColor: Colors.white,
                   gravity: ToastGravity.BOTTOM,
                   backgroundColor: Colors.red,
