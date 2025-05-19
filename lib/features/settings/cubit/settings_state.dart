@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
 sealed class SettingsState {
-  final String locale;
-  final ThemeData theme;
+  final String locale, theme;
   const SettingsState({required this.locale, required this.theme});
 }
 

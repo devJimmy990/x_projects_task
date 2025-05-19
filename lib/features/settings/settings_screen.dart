@@ -15,9 +15,7 @@ class SettingsScreen extends StatelessWidget {
     return SafeArea(
       child: BlocBuilder<SettingsCubit, SettingsState>(
         builder: (context, state) {
-          final isDarkMode = state.theme.brightness == Brightness.dark;
           final cubit = context.read<SettingsCubit>();
-
           return Padding(
             padding: EdgeInsets.all(16.w),
             child: Column(
@@ -25,18 +23,22 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 SettingsOptionsCard(
                   title: Localization.selectTheme,
-                  groupValue: isDarkMode ? "dark" : "light",
-                  onChanged: (_) => cubit.toggleTheme(),
+                  groupValue: state.theme,
+                  onChanged: (opt) => cubit.changeTheme(opt ?? "system"),
                   options: [
                     OptionModel(title: Localization.themeDark, value: "dark"),
                     OptionModel(title: Localization.themeLight, value: "light"),
+                    OptionModel(
+                      title: Localization.themeSystem,
+                      value: "system",
+                    ),
                   ],
                 ),
                 SizedBox(height: 16.h),
                 SettingsOptionsCard(
                   title: Localization.selectLanguage,
                   groupValue: state.locale,
-                  onChanged: (_) => cubit.toggleLocale(),
+                  onChanged: (opt) => cubit.changeLocale(opt ?? "system"),
                   options: [
                     OptionModel(
                       title: Localization.languageEnglish,
@@ -45,6 +47,10 @@ class SettingsScreen extends StatelessWidget {
                     OptionModel(
                       title: Localization.languageArabic,
                       value: "ar",
+                    ),
+                    OptionModel(
+                      title: Localization.languageSystem,
+                      value: "system",
                     ),
                   ],
                 ),
