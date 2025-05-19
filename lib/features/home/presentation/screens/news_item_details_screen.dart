@@ -149,7 +149,6 @@ class NewsItemDetailsScreen extends StatelessWidget {
   }
 }
 
-/// Disable overscroll glow or bounce
 class NoGlowScrollBehavior extends ScrollBehavior {
   @override
   Widget buildOverscrollIndicator(

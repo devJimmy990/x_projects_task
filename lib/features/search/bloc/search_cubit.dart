@@ -59,7 +59,7 @@ class SearchCubit extends Cubit<SearchState> {
       _news.addAll(newItems);
       emit(SearchLoaded(news: _news, isLoadingMore: false));
     } catch (e) {
-      _page--; // Revert page increment on error
+      _page--;
       emit(SearchError(e.toString()));
     } finally {
       _isLoadingMore = false;
