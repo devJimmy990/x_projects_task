@@ -80,6 +80,16 @@ class S {
     return Intl.message('Error', name: 'error', desc: '', args: []);
   }
 
+  /// `Device Settings`
+  String get theme_system {
+    return Intl.message(
+      'Device Settings',
+      name: 'theme_system',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Dark Mode`
   String get theme_dark {
     return Intl.message('Dark Mode', name: 'theme_dark', desc: '', args: []);
@@ -110,6 +120,16 @@ class S {
     );
   }
 
+  /// `Device Settings`
+  String get language_system {
+    return Intl.message(
+      'Device Settings',
+      name: 'language_system',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Arabic`
   String get language_arabic {
     return Intl.message('Arabic', name: 'language_arabic', desc: '', args: []);
@@ -128,6 +148,16 @@ class S {
   /// `News`
   String get search_news {
     return Intl.message('News', name: 'search_news', desc: '', args: []);
+  }
+
+  /// `Type to search...`
+  String get search_type {
+    return Intl.message(
+      'Type to search...',
+      name: 'search_type',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Search here...`
@@ -180,6 +210,36 @@ class S {
     return Intl.message(
       'Removed from bookmark',
       name: 'bookmark_removed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error`
+  String get error_unknown {
+    return Intl.message(
+      'Unknown error',
+      name: 'error_unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get error_offline {
+    return Intl.message(
+      'No internet connection',
+      name: 'error_offline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maximum number of requests reached`
+  String get error_max_request {
+    return Intl.message(
+      'Maximum number of requests reached',
+      name: 'error_max_request',
       desc: '',
       args: [],
     );

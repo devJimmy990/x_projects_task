@@ -30,17 +30,27 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "day_ago": MessageLookupByLibrary.simpleMessage("day ago"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "error_max_request": MessageLookupByLibrary.simpleMessage(
+      "Maximum number of requests reached",
+    ),
+    "error_offline": MessageLookupByLibrary.simpleMessage(
+      "No internet connection",
+    ),
+    "error_unknown": MessageLookupByLibrary.simpleMessage("Unknown error"),
     "language_arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "language_english": MessageLookupByLibrary.simpleMessage("English"),
+    "language_system": MessageLookupByLibrary.simpleMessage("Device Settings"),
     "latest_bookmark": MessageLookupByLibrary.simpleMessage("Latest Bookmark"),
     "latest_news": MessageLookupByLibrary.simpleMessage("Latest News"),
     "search_empty": MessageLookupByLibrary.simpleMessage("No results found"),
     "search_hint": MessageLookupByLibrary.simpleMessage("Search here..."),
     "search_news": MessageLookupByLibrary.simpleMessage("News"),
+    "search_type": MessageLookupByLibrary.simpleMessage("Type to search..."),
     "select_language": MessageLookupByLibrary.simpleMessage("Select Language"),
     "select_theme": MessageLookupByLibrary.simpleMessage("Select Theme"),
     "theme_dark": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "theme_light": MessageLookupByLibrary.simpleMessage("Light Mode"),
+    "theme_system": MessageLookupByLibrary.simpleMessage("Device Settings"),
     "today": MessageLookupByLibrary.simpleMessage("Today"),
   };
 }

@@ -5,12 +5,15 @@
     "today": "اليوم",
     "day_ago": "منذ يوم",
     "error": "خطأ",
+    "theme_system": "حسب إعدادات الجهاز",
     "theme_dark": "الوضع المظلم",
     "theme_light": "الوضع الفاتح",
     "select_theme": "إختيار النمط",
     "select_language": "إختيار اللغة",
     "language_arabic": "العربية",
+    "language_system": "حسب إعدادات الجهاز",
     "language_english": "الإنجليزية",
+    "search_type": "ابحث...",
     "search_news": "خبر",
     "search_hint": "ابحث هنا...",
     "search_empty": "لا يوجد نتايج",
@@ -18,5 +21,7 @@
     "latest_bookmark": "أهم الأخبار",
     "bookmark_added": "تمت الإضافة في المفضلة",
     "bookmark_removed": "تم الحذف من المفضلة",
-    "sa": ""
+    "error_unknown": "خطاء غير معروف",
+    "error_offline": "لا يوجد اتصال بالانترنت",
+    "error_max_request": "تم تجاوز عدد الطلبات المسموح بها"
 }

@@ -32,17 +32,29 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "day_ago": MessageLookupByLibrary.simpleMessage("منذ يوم"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+    "error_max_request": MessageLookupByLibrary.simpleMessage(
+      "تم تجاوز عدد الطلبات المسموح بها",
+    ),
+    "error_offline": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالانترنت",
+    ),
+    "error_unknown": MessageLookupByLibrary.simpleMessage("خطاء غير معروف"),
     "language_arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "language_english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
+    "language_system": MessageLookupByLibrary.simpleMessage(
+      "حسب إعدادات الجهاز",
+    ),
     "latest_bookmark": MessageLookupByLibrary.simpleMessage("أهم الأخبار"),
     "latest_news": MessageLookupByLibrary.simpleMessage("أحدث الأخبار"),
     "search_empty": MessageLookupByLibrary.simpleMessage("لا يوجد نتايج"),
     "search_hint": MessageLookupByLibrary.simpleMessage("ابحث هنا..."),
     "search_news": MessageLookupByLibrary.simpleMessage("خبر"),
+    "search_type": MessageLookupByLibrary.simpleMessage("ابحث..."),
     "select_language": MessageLookupByLibrary.simpleMessage("إختيار اللغة"),
     "select_theme": MessageLookupByLibrary.simpleMessage("إختيار النمط"),
     "theme_dark": MessageLookupByLibrary.simpleMessage("الوضع المظلم"),
     "theme_light": MessageLookupByLibrary.simpleMessage("الوضع الفاتح"),
+    "theme_system": MessageLookupByLibrary.simpleMessage("حسب إعدادات الجهاز"),
     "today": MessageLookupByLibrary.simpleMessage("اليوم"),
   };
 }
